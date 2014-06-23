@@ -90,3 +90,4 @@ module Octopress
 end
 
 Liquid::Template.register_tag('render_code', Octopress::RenderCode::Tag)
+Liquid::Template.register_tag('include_code', Octopress::RenderCode::Tag)
