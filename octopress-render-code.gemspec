@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Octopress::RenderCode::VERSION
   gem.authors       = ["Brandon Mathis"]
   gem.email         = ["brandon@imathis.com"]
-  gem.description   = %q{Write beautiful code snippets within any template.}
-  gem.summary       = %q{Write beautiful code snippets within any template.}
-  gem.homepage      = "https://github.com/octopress/octopress-render-code"
+  gem.description   = %q{Embed highlighted code snippets from a file.}
+  gem.summary       = %q{Embed highlighted code snippets from a file.}
+  gem.homepage      = "https://github.com/octopress/render-code"
   gem.license       = "MIT"
 
   gem.add_runtime_dependency 'octopress-code-highlighter', '~> 4.0.1'
