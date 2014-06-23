@@ -25,6 +25,7 @@ module Octopress
         begin
           options = get_options
           code = File.open(@file).read.encode("UTF-8")
+          code = CodeHighlighter.select_lines(code, options)
 
           highlight(code, options)
         rescue => e
@@ -64,9 +65,6 @@ module Octopress
             puts "  Update #{@page_path} with {% render_code #{$2} #{$1} ... %}.".yellow
           end
         end
-
-
-        #failure("File not found") if !@file
 
         options = CodeHighlighter.parse_markup(@markup, defaults)
         options[:lang] ||= File.extname(@file).delete('.')
