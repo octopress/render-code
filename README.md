@@ -2,7 +2,7 @@
 
 Write beautiful code snippets within any template.
 
-[![Build Status](https://travis-ci.org/octopress/octopress-render-code.png?branch=master)](https://travis-ci.org/octopress/octopress-render-code)
+[![Build Status](https://travis-ci.org/octopress/render-code.png?branch=master)](https://travis-ci.org/octopress/render-code)
 
 ## Installation
 
