@@ -13,6 +13,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/octopress/render-code"
   gem.license       = "MIT"
 
+  gem.add_runtime_dependency 'jekyll', '~> 2.0.3'
   gem.add_runtime_dependency 'octopress-code-highlighter', '~> 4.0.1'
 
   gem.add_development_dependency 'rake'
