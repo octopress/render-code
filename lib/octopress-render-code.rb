@@ -50,7 +50,7 @@ module Octopress
         clean_markup = CodeHighlighter.clean_markup(@markup).strip
 
         if clean_markup =~ FileOnly
-          @file = $1
+          @file = get_path($1)
         elsif clean_markup =~ FileTitle
           if @file = get_path($1)
             defaults[:title] = $2
