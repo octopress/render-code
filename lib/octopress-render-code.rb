@@ -17,7 +17,9 @@ module Octopress
       end
 
       def render(context)
-        @page_path = context.environments.first['page']['path']
+        if page = context.environments.first['page']
+          @page_path = page['path']
+        end
         site = context.registers[:site]
         config_dir = (site.config['code_dir'] || 'downloads/code').sub(/^\//,'')
         @code_dir = File.join(site.source, config_dir)
@@ -60,9 +62,11 @@ module Octopress
           elsif clean_markup =~ TitleFile
             defaults[:title] = $1
             @file = get_path($2)
-            puts "\nRenderCode Warning:".red
-            puts "  Passing title before path has been deprecated and will be removed in RenderCode 2.0".red
-            puts "  Update #{@page_path} with {% render_code #{$2} #{$1} ... %}.".yellow
+            if @page_path
+              puts "\nRenderCode Warning:".red
+              puts "  Passing title before path has been deprecated and will be removed in RenderCode 2.0".red
+              puts "  Update #{@page_path} with {% render_code #{$2} #{$1} ... %}.".yellow
+            end
           end
         end
 
@@ -80,7 +84,9 @@ module Octopress
       def highlight(code, options)
         options[:aliases] = @aliases || {}
         code = CodeHighlighter.highlight(code, options)
-        code = "<notextile>#{code}</notextile>" if File.extname(@page_path).match(/textile/)
+        if @page_path
+          code = "<notextile>#{code}</notextile>" if File.extname(@page_path).match(/textile/)
+        end
         code
       end
     end
