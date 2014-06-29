@@ -1,6 +1,9 @@
 # Changelog
 
 ## 1.0.2 - 2014-06-25
+- Updated to the latest octopress-code-highlighter.
+
+## 1.0.2 - 2014-06-25
 - Fix: Better supports being rendered as a partial
 
 ## 1.0.1 - 2014-06-23
