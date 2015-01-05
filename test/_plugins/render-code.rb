@@ -1,1 +1,0 @@
-require 'octopress-render-code'

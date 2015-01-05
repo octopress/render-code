@@ -7,3 +7,5 @@ exclude:
   - test.rb
 pygments_aliases:
   abc: ruby
+gems:
+  - octopress-render-code

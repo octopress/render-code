@@ -1,0 +1,2 @@
+build: true 
+compare: expected.html _site/index.html

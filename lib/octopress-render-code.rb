@@ -95,3 +95,17 @@ end
 
 Liquid::Template.register_tag('render_code', Octopress::RenderCode::Tag)
 Liquid::Template.register_tag('include_code', Octopress::RenderCode::Tag)
+
+
+if defined? Octopress::Docs
+  Octopress::Docs.add({
+    name:        "Octopress Render Code",
+    gem:         "octopress-render-code",
+    description: "Embed code snippets from the file system.",
+    path:        File.expand_path(File.join(File.dirname(__FILE__), "../")),
+    type:        "tag",
+    source_url:  "https://github.com/octopress/render-code",
+    version:     Octopress::RenderCode::VERSION
+  })
+end
+
