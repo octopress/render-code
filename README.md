@@ -2,8 +2,8 @@
 
 Embed code snippets from the file system in your Jekyll site.
 
-[![Build Status](https://travis-ci.org/octopress/render-code.png?branch=master)](https://travis-ci.org/octopress/render-code)
-[![Gem Version](https://badge.fury.io/rb/octopress-render-code.png)](http://badge.fury.io/rb/octopress-render-code)
+[![Build Status](https://travis-ci.org/octopress/render-code.svg?branch=master)](https://travis-ci.org/octopress/render-code)
+[![Gem Version](https://badge.fury.io/rb/octopress-render-code.svg)](http://badge.fury.io/rb/octopress-render-code)
 
 ## Installation
 
