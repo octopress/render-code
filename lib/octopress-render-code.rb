@@ -73,6 +73,7 @@ module Octopress
         options = CodeHighlighter.parse_markup(@markup, defaults)
         options[:lang] ||= File.extname(@file).delete('.')
         options[:link_text] ||= "Raw code"
+        options[:url] ||= "/#{@code_dir}/#{@file}"
         options
       end
 
