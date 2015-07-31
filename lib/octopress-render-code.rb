@@ -21,8 +21,8 @@ module Octopress
           @page_path = page['path']
         end
         site = context.registers[:site]
-        config_dir = (site.config['code_dir'] || 'downloads/code').sub(/^\//,'')
-        @code_dir = File.join(site.source, config_dir)
+        @config_dir = (site.config['code_dir'] || 'downloads/code').sub(/^\//,'')
+        @code_dir = File.join(site.source, @config_dir)
 
         begin
           options = get_options
@@ -53,15 +53,18 @@ module Octopress
 
         if clean_markup =~ FileOnly
           @file = get_path($1)
+          file_name = $1
         elsif clean_markup =~ FileTitle
           if @file = get_path($1)
             defaults[:title] = $2
+            file_name = $1
           
           # Allow for deprecated title first syntax
           #
           elsif clean_markup =~ TitleFile
             defaults[:title] = $1
             @file = get_path($2)
+            file_name = $2
             if @page_path
               puts "\nRenderCode Warning:".red
               puts "  Passing title before path has been deprecated and will be removed in RenderCode 2.0".red
@@ -73,7 +76,7 @@ module Octopress
         options = CodeHighlighter.parse_markup(@markup, defaults)
         options[:lang] ||= File.extname(@file).delete('.')
         options[:link_text] ||= "Raw code"
-        options[:url] ||= "/#{@code_dir}/#{@file}"
+        options[:url] ||= "/#{@config_dir}/#{file_name}"
         options
       end
 
