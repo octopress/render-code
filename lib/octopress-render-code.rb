@@ -39,7 +39,7 @@ module Octopress
         path = File.join(@code_dir, file)
 
         if File.symlink?(path)
-          raise "Code directory '#{@code_path}' cannot be a symlink"
+          raise "Code directory '#{@code_dir}' cannot be a symlink"
         end
 
         path if File.exists?(path)
