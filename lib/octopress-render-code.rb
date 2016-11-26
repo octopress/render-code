@@ -54,6 +54,7 @@ module Octopress
         if clean_markup =~ FileOnly
           @file = get_path($1)
           file_name = $1
+          defaults[:title] = $1
         elsif clean_markup =~ FileTitle
           if @file = get_path($1)
             defaults[:title] = $2
